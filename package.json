@@ -1,0 +1,8 @@
+{
+  "name": "math",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Dmitri Tikhomirov",
+  "type": "module"
+}
