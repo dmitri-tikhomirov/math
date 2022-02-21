@@ -4,5 +4,8 @@
     "start": "node app.js"
   },
   "author": "Dmitri Tikhomirov",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "assemblyscript": "^0.19.23"
+  }
 }
