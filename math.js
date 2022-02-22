@@ -22,3 +22,13 @@ export function nthFibonacci(n) {
 
   return a;
 }
+
+export function factorial(n) {
+  let result = 1n;
+
+  for (let i = 2; i <= n; i++) {
+    result *= BigInt(i);
+  }
+
+  return result;
+}

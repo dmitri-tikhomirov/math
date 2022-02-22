@@ -9,7 +9,7 @@ export function nthFibonacci(n: i32): i64 {
 
   if (n > 0) {
     while (n - 1 > 0) {
-      const next: i64 = a + b;
+      const next = a + b; // "i64" is inferred
 
       a = b;
       b = next;
@@ -21,4 +21,14 @@ export function nthFibonacci(n: i32): i64 {
   }
 
   return a;
+}
+
+export function factorial(n: i32): i64 {
+  let result: i64 = 1;
+
+  for (let i = 2; i <= n; i++) {
+    result *= i; // Implicitly converted
+  }
+
+  return result;
 }
