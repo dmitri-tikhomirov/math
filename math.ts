@@ -32,3 +32,27 @@ export function factorial(n: i32): i64 {
 
   return result;
 }
+
+export function nthPrime(n: i32): i32 {
+  let number = 2;
+  let lastPrime = 0;
+
+  while (n > 0) {
+    let factor = 2;
+    let isPrime = true;
+
+    while (factor * factor <= number && isPrime) {
+      if (number % factor == 0) isPrime = false; // "===" is different in AS
+      else factor++;
+    }
+
+    if (isPrime) {
+      n--;
+      lastPrime = number;
+    }
+
+    number++;
+  }
+
+  return lastPrime;
+}

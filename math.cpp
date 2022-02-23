@@ -33,4 +33,27 @@ extern "C" { // To prevent name mangling
 
     return result;
   }
+
+  int nthPrime(int n) {
+    int number = 2, lastPrime = 0;
+
+    while (n > 0) {
+      int factor = 2;
+      bool isPrime = true;
+
+      while (factor * factor <= number && isPrime) {
+        if (number % factor == 0) isPrime = false;
+        else factor++;
+      }
+
+      if (isPrime) {
+        n--;
+        lastPrime = number;
+      }
+
+      number++;
+    }
+
+    return lastPrime;
+  }
 }
