@@ -9,7 +9,7 @@ export function nthFibonacci(n: i32): i64 {
 
   if (n > 0) {
     while (n - 1 > 0) {
-      const next = a + b; // "i64" is inferred
+      const next = a + b; // "i64" is inferred.
 
       a = b;
       b = next;
@@ -27,7 +27,7 @@ export function factorial(n: i32): i64 {
   let result: i64 = 1;
 
   for (let i = 2; i <= n; i++) {
-    result *= i; // Implicitly converted
+    result *= i; // Implicitly converted.
   }
 
   return result;
@@ -42,7 +42,7 @@ export function nthPrime(n: i32): i32 {
     let isPrime = true;
 
     while (factor * factor <= number && isPrime) {
-      if (number % factor == 0) isPrime = false; // "===" is different in AS
+      if (number % factor == 0) isPrime = false; // "==" instead of "===".
       else factor++;
     }
 

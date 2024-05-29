@@ -1,4 +1,4 @@
-extern "C" { // To prevent name mangling
+extern "C" { // To prevent name mangling.
   int nthFibonacciRecursive(int n) {
     if (n < 2) return n;
 
@@ -28,7 +28,7 @@ extern "C" { // To prevent name mangling
     long long int result = 1;
 
     for (int i = 2; i <= n; i++) {
-      result *= i; // Implicitly converted
+      result *= i; // Implicitly converted.
     }
 
     return result;

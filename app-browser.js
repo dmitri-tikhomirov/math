@@ -1,5 +1,3 @@
-import {readFileSync} from 'fs';
-
 import * as mathJs from './math-js.js';
 
 console.log('Javascript vs Webassembly, nth Fibonacci');
@@ -14,7 +12,7 @@ console.timeEnd('Javascript time');
 console.log('\n');
 
 console.time('WebAssembly (C++) time');
-const mathCpp = await WebAssembly.instantiate(readFileSync('math-cpp.wasm'));
+const mathCpp = await WebAssembly.instantiateStreaming(fetch("math-cpp.wasm"));
 console.timeLog('WebAssembly (C++) time');
 console.log('nth Fibonacci: ' +
   mathCpp.instance.exports.nthFibonacciRecursive(n));
@@ -22,7 +20,7 @@ console.timeEnd('WebAssembly (C++) time');
 console.log('\n');
 
 console.time('WebAssembly (AssemblyScript) time');
-const mathAs = await WebAssembly.instantiate(readFileSync('math-as.wasm'));
+const mathAs = await WebAssembly.instantiateStreaming(fetch("math-as.wasm"));
 console.timeLog('WebAssembly (AssemblyScript) time');
 console.log('nth Fibonacci: ' +
   mathAs.instance.exports.nthFibonacciRecursive(n));
